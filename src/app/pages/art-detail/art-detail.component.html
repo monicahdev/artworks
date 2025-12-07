@@ -1,1 +1,37 @@
-<p>art-detail works!</p>
+<div class="container mt-5">
+    @if(artworkDetail()){
+        <div class="row animate__animated animate__bounce animate__fadeIn">
+            <div class="col-md-9">
+            <p><strong>Identifier:</strong> {{ artworkDetail().id }}</p>
+            <p><strong>Title:</strong> {{ artworkDetail().title }}</p>
+            <p><strong>Creation date:</strong> {{ artworkDetail().creation_date }}</p>
+            <p><strong>Technique:</strong> {{ artworkDetail().technique }}</p>
+            <p><strong>Measurements:</strong> {{ artworkDetail().measurements }}</p>
+
+            @if (artworkDetail().creators?.length) {
+            <p><strong>Creators:</strong>
+            
+                @for (creator of artworkDetail().creators; track $index) {
+                {{ creator.description }}
+                }
+            </p>
+            }
+
+            @if (artworkDetail().images?.web?.url) {
+            <div class="mt-3">
+                <img
+                class="img-fluid rounded"
+                [src]="artworkDetail().images?.web?.url"
+                [alt]="artworkDetail().title"
+                />
+            </div>
+            }
+      </div>
+            
+            <div class="col-md-3">
+                <a class="btn btn-danger">Back</a>
+            </div>
+        </div>
+
+    }
+</div>
