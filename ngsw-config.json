@@ -32,7 +32,7 @@
   ],
   "dataGroups": [{
     "name": "artworks-api",
-    "urls": ["https://openaccess-api.clevelandart.org"],
+    "urls": ["api/**"],
     "cacheConfig": {
       "maxSize": 100,
       "maxAge": "1h",
