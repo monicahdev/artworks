@@ -29,5 +29,15 @@
         ]
       }
     }
-  ]
+  ],
+  "dataGroups": [{
+    "name": "artworks-api",
+    "urls": ["https://openaccess-api.clevelandart.org"],
+    "cacheConfig": {
+      "maxSize": 100,
+      "maxAge": "1h",
+      "timeout": "2s",
+      "strategy": "freshness"
+    }
+  }]
 }
