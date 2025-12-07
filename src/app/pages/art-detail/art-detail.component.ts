@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-art-detail',
   imports: [],
   templateUrl: './art-detail.component.html',
-  styleUrl: './art-detail.component.scss'
+  styleUrl: './art-detail.component.scss',
 })
-export class ArtDetailComponent {
-
-}
+export class ArtDetailComponent {}
