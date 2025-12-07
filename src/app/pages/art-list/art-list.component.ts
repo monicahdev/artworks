@@ -15,7 +15,7 @@ export class ArtListComponent {
 
   ngOnInit(): void {
     this.artService
-      .getArt()
+      .getArtworks()
       .subscribe((artworks) => this.artworks.set(artworks));
   }
 }
