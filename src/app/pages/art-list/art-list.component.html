@@ -1,1 +1,14 @@
-<p>art-list works!</p>
+<div class="container">
+    <h1>Artworks</h1>
+    <ul class="list-group">
+        @for (artwork of artworks(); track artwork.id) {
+       <a 
+        [routerLink]="['/artworks', artwork.id]"
+        class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn"
+        >
+    {{ artwork.id }} - {{ artwork.artist_display }}
+    
+    </a>
+        }
+    </ul>
+</div>
