@@ -12,7 +12,7 @@ interface ArtApiResponse {
   providedIn: 'root',
 })
 export class ArtService {
-  private api = 'https://api.artic.edu/api/v1/artworks?page=2&limit=25';
+  private api = 'https://api.artic.edu/api/v1/artworks?page=1&limit=50&sort=id';
 
   constructor(private http: HttpClient) {}
 
