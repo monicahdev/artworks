@@ -13,6 +13,8 @@ import { Artwork } from '../../models/art.interface';
 export class ArtworkGridComponent {
   @Input({ required: true }) artworks: Artwork[] = [];
 
+  displayedColumns = ['id', 'title', 'creation_date'] as const;
+
   constructor(private router: Router) {}
 
   goToArtworkDetail(row: Artwork) {
