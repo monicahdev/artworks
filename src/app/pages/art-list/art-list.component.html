@@ -1,10 +1,26 @@
 <div class="container">
+  <div class="header">
     <h1>Artworks</h1>
-    <ul class="list-group">
-        @for (artwork of artworks(); track artwork.id) {
-      <a [routerLink]="['/artworks', artwork.id]" class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn">
-        {{ artwork.id }} -  {{ artwork.title }}
-      </a>
+    <div class="view-switch">
+      <button mat-raised-button (click)="setCardsView()">
+        <mat-icon>view_module</mat-icon>
+        Cards
+      </button>
+
+      <button mat-raised-button (click)="setTableView()">
+        <mat-icon>table_rows</mat-icon>
+        Tabla
+      </button>
+    </div>
+  </div>
+
+    @if (viewMode() === 'cards') {
+        <div class="cards">
+          @for (artwork of artworks(); track artwork.id) {
+            <app-artwork-card [artwork]="artwork"></app-artwork-card>
+          }
+        </div>
+      } @else {
+        <app-artwork-grid [artworks]="artworks()"></app-artwork-grid>
       }
-    </ul>
 </div>
