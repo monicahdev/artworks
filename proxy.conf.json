@@ -1,8 +1,0 @@
-{
-  "/api": {
-    "target": "https://openaccess-api.clevelandart.org",
-    "secure": true,
-    "changeOrigin": true,
-    "logLevel": "debug"
-  }
-}
