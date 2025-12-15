@@ -14,6 +14,12 @@
     </div>
   </div>
 
+   @if (isLoading()) {
+    <div>
+      <mat-spinner diameter="100"></mat-spinner>
+    </div>
+  }
+
     @if (viewMode() === 'cards') {
         <div class="cards">
           @for (artwork of artworks(); track artwork.id) {
