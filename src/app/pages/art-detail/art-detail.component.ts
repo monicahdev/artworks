@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Artwork } from '../../models/art.interface';
 import { ArtService } from '../../services/art.service';
 @Component({
   selector: 'app-art-detail',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, MatExpansionModule],
   templateUrl: './art-detail.component.html',
   styleUrl: './art-detail.component.scss',
 })
@@ -25,6 +27,8 @@ export class ArtDetailComponent {
       },
     },
   });
+
+  showAllDetails = signal(false);
 
   constructor(
     private artService: ArtService,
