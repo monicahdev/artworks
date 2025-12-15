@@ -1,4 +1,14 @@
 <div class="container mt-5">
+    @if (artworkDetail()) {
+    <div class="topbar">
+      <h1 class="title">{{ artworkDetail()!.title }}</h1>
+
+      <button mat-raised-button color="warn" (click)="backHome()" class="col-md-3">Back
+      </button>
+    </div>
+  }
+</div>
+<!--
     @if(artworkDetail()){
         <div class="row animate__animated animate__bounce animate__fadeIn">
             <div class="col-md-9">
@@ -34,4 +44,4 @@
         </div>
 
     }
-    </div>
+    </div>-->
