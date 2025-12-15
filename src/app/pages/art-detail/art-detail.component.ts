@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Artwork } from '../../models/art.interface';
 import { ArtService } from '../../services/art.service';
 @Component({
   selector: 'app-art-detail',
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './art-detail.component.html',
   styleUrl: './art-detail.component.scss',
 })
@@ -47,5 +48,9 @@ export class ArtDetailComponent {
         console.log('artworkDetail -->', this.artworkDetail());
       });
     }
+  }
+
+  backHome(): void {
+    this.router.navigateByUrl('/artworks');
   }
 }
