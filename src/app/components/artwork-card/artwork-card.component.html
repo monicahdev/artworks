@@ -1,9 +1,21 @@
 <mat-card class="art-card" (click)="goToArtworkDetail()">
+  @if (artwork.images?.web?.url) {
+    <img
+      mat-card-image
+      [src]="artwork.images?.web?.url"
+      [alt]="artwork.title"
+      loading="lazy"
+    />
+    
+  }
+  @else {
+    <p>Image is currently unavailable.</p>
+  }
   <mat-card-header>
-    <mat-card-title>{{ artwork.title }}</mat-card-title>
-    <mat-card-subtitle>ID: {{ artwork.id }}</mat-card-subtitle>
+    <mat-card-title><strong>{{ artwork.title }}</strong></mat-card-title>
+    <mat-card-subtitle><strong>ID:</strong> {{ artwork.id }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <p>Fecha: {{ artwork.creation_date }}</p> 
+    <p><strong>Date:</strong> {{ artwork.creation_date }}</p> 
   </mat-card-content>
 </mat-card>
