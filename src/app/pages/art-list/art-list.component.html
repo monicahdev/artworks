@@ -18,8 +18,8 @@
     <div>
       <mat-spinner diameter="100"></mat-spinner>
     </div>
-  }
-
+  } @else {
+    <div @fadeIn>
     @if (viewMode() === 'cards') {
         <div class="cards">
           @for (artwork of artworks(); track artwork.id) {
@@ -29,4 +29,6 @@
       } @else {
         <app-artwork-grid [artworks]="artworks()"></app-artwork-grid>
       }
+</div>
+  }
 </div>
