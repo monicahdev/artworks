@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,6 +19,17 @@ import { ArtService } from '../../services/art.service';
   ],
   templateUrl: './art-list.component.html',
   styleUrl: './art-list.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 1000, transform: 'translateY(100px)' }),
+        animate(
+          '2500ms ease-out',
+          style({ opacity: 1, transform: 'translateY(10)' })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class ArtListComponent {
   artworks = signal<Artwork[]>([]);
