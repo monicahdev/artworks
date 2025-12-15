@@ -9,13 +9,13 @@
 
       <button mat-raised-button (click)="setTableView()">
         <mat-icon>table_rows</mat-icon>
-        Tabla
+        Table
       </button>
     </div>
   </div>
 
    @if (isLoading()) {
-    <div>
+    <div class="spinner-container">
       <mat-spinner diameter="100"></mat-spinner>
     </div>
   } @else {
